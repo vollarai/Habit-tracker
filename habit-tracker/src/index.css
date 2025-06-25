@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.highlight {
+  background: #4d8ddb !important; 
+  color: white !important;
+  border-radius: 50%;
+}
