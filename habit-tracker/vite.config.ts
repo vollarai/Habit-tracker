@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Habit-tracker/',
+  base: '/Habit-tracker/habit-tracker/',
   plugins: [react()],
 })
