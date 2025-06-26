@@ -21,10 +21,11 @@ Backend (Node.js + Express + Prisma)
 - Docker – Runs PostgreSQL database container
 
 Prerequisites
--Node.js
--npm
--Docker
--Git
+
+- Node.js
+- npm
+- Docker
+- Git
 
 Backend Setup
 1. docker run --name habit-tracker-postgres \
@@ -40,12 +41,14 @@ Backend Setup
     DATABASE_URL=postgresql://postgres:postgres@localhost:5432/habit_tracker
 6. npx prisma migrate dev --name init
 7. node index.js
+
 The backend will run at http://localhost:4000
 
 Frontend Setup
 1. cd habit-tracker
 2. npm install
 3. npm run dev
-The app will run at http://localhost:5173
+
+The frontend will run at http://localhost:5173
 
 Go to http://localhost:5173/register
