@@ -7,7 +7,7 @@
   "scripts": {
     "init:tailwind": "tailwindcss init -p",
     "dev": "vite",
-    "build": "vite build && rm -rf docs && mkdir docs && cp -r dist/* docs/",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
