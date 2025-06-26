@@ -11,7 +11,7 @@ const HabitCalendar: React.FC<HabitCalendarProps> = ({ history }) => {
 
   const tileClassName = ({ date, view }: { date: Date; view: string }) => {
     if (view === 'month') {
-      const dateStr = date.toISOString().split('T')[0];
+      const dateStr = date.toLocaleDateString('sv-SE');
       if (historySet.has(dateStr)) {
         return 'highlight';
       }

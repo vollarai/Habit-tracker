@@ -16,10 +16,11 @@ const calculateStreak = (history: string[], includeToday: boolean) => {
   const sortedHistory = [...history].sort((a, b) => b.localeCompare(a));
 
   for (let i = 0; i < sortedHistory.length; i++) {
-    const date = new Date(sortedHistory[i]);
-    let diffDays = Math.floor((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+    const [year, month, day] = sortedHistory[i].split('-').map(Number);
+    const date = new Date(year, month - 1, day);
 
-    if (!includeToday) diffDays -= 1; 
+    let diffDays = Math.floor((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+    if (!includeToday) diffDays -= 1;
 
     if (diffDays === streak) {
       streak++;
@@ -31,8 +32,11 @@ const calculateStreak = (history: string[], includeToday: boolean) => {
 };
 
 const getStreakStatus = (history: string[]) => {
-  const todayStr = new Date().toISOString().split('T')[0];
-  const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+  const todayStr = new Date().toLocaleDateString('sv-SE');
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayStr = yesterday.toLocaleDateString('sv-SE');
+
   const hasToday = history.includes(todayStr);
   const hasYesterday = history.includes(yesterdayStr);
 
@@ -68,8 +72,8 @@ const Statistics = () => {
             streak = calculateStreak(habit.history, false);
           }
 
-          let statusColor = 'text-red';
-          let statusIcon = <FaTimesCircle className="text-2xl text-red" />;
+          let statusColor = 'text-red-500';
+          let statusIcon = <FaTimesCircle className="text-2xl text-red-500" />;
           if (status === 'active') {
             statusColor = 'text-orange-500';
             statusIcon = <FaFire className="text-2xl" />;
@@ -88,11 +92,9 @@ const Statistics = () => {
               <div className="flex items-center justify-between">
                 <div className={`flex items-center gap-2 ${statusColor}`}>
                   {statusIcon}
-                  {(status === 'active' || status === 'pending') && (
-                    <span className="text-lg font-bold">
-                      {streak} day{streak === 1 ? '' : 's'}
-                    </span>
-                  )}
+                  <span className="text-lg font-bold">
+                    {streak} day{streak === 1 ? '' : 's'}
+                  </span>
                 </div>
               </div>
 
