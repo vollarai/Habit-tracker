@@ -45,7 +45,7 @@ Backend Setup
 The backend will run at http://localhost:4000
 
 Frontend Setup
-1. cd habit-tracker
+1. cd habit-tracker-frontend
 2. npm install
 3. npm run dev
 
