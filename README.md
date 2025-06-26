@@ -11,6 +11,7 @@ Frontend (React + Vite + TypeScript)
 - React Icons – Icons for UI
 - React Calendar – Calendar visualization of habit history
 - JWT – Used for authentication
+
 Backend (Node.js + Express + Prisma)
 - Express.js – REST API server
 - Prisma ORM – Database access layer
