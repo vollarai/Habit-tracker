@@ -32,7 +32,7 @@ Prerequisites
 Backend Setup
 1. docker run --name habit-tracker-postgres \
   -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=postgres \
+  -e POSTGRES_PASSWORD= \
   -e POSTGRES_DB=habit_tracker \
   -p 5432:5432 \
   -d postgres
