@@ -4,31 +4,6 @@ Habit Tracker App
 
 A habit tracking web application that allows users to register, log in, track daily habits, and view streak statistics and a calendar of completions.
 
-Technologies:
-
-Frontend (React + Vite + TypeScript)
-- React Router DOM – Routing and navigation
-- React Context API – Authentication state
-- Tailwind CSS – Styling
-- React Icons – Icons for UI
-- React Calendar – Calendar visualization of habit history
-- JWT – Used for authentication
-
-Backend (Node.js + Express + Prisma)
-- Express.js – REST API server
-- Prisma ORM – Database access layer
-- PostgreSQL (via Docker) – Relational database containerized with Docker
-- bcrypt – Password hashing
-- sonwebtoken – JWT token handling
-- Docker – Runs PostgreSQL database container
-
-Prerequisites
-
-- Node.js
-- npm
-- Docker
-- Git
-
 Backend Setup
 1. docker run --name habit-tracker-postgres \
   -e POSTGRES_USER=postgres \
